@@ -1,5 +1,6 @@
 # ZodifyForms :zap:
 
+![zodify-forms.png](zodify-forms.png)
 **ZodifyForms** is a dynamic React form generator that seamlessly integrates with Zod schemas to create robust, type-safe forms using React Hook Form. Designed for simplicity and efficiency, this library automates the form creation process, transforming Zod schemas into fully functional React forms with minimal effort.
 
 <div align="center">
