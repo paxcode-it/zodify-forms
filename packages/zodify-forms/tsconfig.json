@@ -20,5 +20,5 @@
     "lib": ["es2022", "dom"]
   },
   "include": ["src/**/*.ts", "__tests__/**/*.ts"],
-  "exclude": ["node_modules", "lib", "coverage"]
+  "exclude": ["../../node_modules", "lib", "coverage"]
 }

@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "lib",
+    "module": "ESNext",
+    "declaration": true,
+    "declarationDir": "lib"
+  },
+  "exclude": ["__tests__", "**/node_modules", "lib", "coverage"]
+}
