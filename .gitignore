@@ -1,6 +1,7 @@
 .idea
 
 coverage
-lib
+**/lib
 node_modules
 pnpm-debug.log
+**/.turbo

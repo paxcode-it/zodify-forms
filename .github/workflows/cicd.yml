@@ -1,0 +1,66 @@
+name: CI/CD
+
+on:
+  push:
+    paths:
+      - 'packages/**'
+    branches:
+      - main
+      - beta
+      - next
+      - experimental
+      - dev
+      - 4.x
+  pull_request:
+    paths:
+      - 'packages/**'
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run lint:lib
+      - run: pnpm run test:lib
+
+  CD:
+    if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'  }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    needs: [CI]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+          cache-dependency-path: './pnpm-lock.yaml'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build:lib
+      - name: Release lib to NPM
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm run deploy:lib

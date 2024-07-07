@@ -12,11 +12,15 @@
   "plugins": ["import", "prettier"],
   "settings": {
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts"]
+      "@typescript-eslint/parser": [".ts", ".tsx"]
     },
     "import/resolver": {
-      "typescript": true,
-      "node": true
+      "typescript": {
+        "project": ["tsconfig.json", "packages/*/tsconfig.json"]
+      },
+      "node": {
+        "project": ["tsconfig.json", "packages/*/tsconfig.json"]
+      }
     }
   },
   "rules": {
@@ -54,7 +58,7 @@
   },
   "overrides": [
     {
-      "files": ["__tests__/**"],
+      "files": ["**/__tests__/**"],
       "plugins": ["jest"],
       "extends": ["plugin:jest/recommended"],
       "rules": {

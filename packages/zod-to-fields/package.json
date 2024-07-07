@@ -1,7 +1,6 @@
 {
-  "name": "zodify-forms",
-  "private": true,
-  "version": "0.0.1",
+  "name": "zod-to-fields",
+  "version": "0.1.38",
   "description": "Turn your Zod schemas into configurable field arrays for easy integration with HTML, React, Vue, and more.",
   "main": "lib/index.mjs",
   "module": "lib/index.mjs",
@@ -9,8 +8,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paxcode-it/zodify-forms/tree/dev/packages/zodify-forms",
+    "url": "https://github.com/wojtekKrol/zodify-forms/tree/dev/packages/zod-to-fields",
     "bugs": "https://github.com/wojtekKrol/zodify-forms/issues"
+  },
+  "imports": {
+    "@/*": "./src/*"
   },
   "exports": {
     ".": {
@@ -53,8 +55,9 @@
     "deploy": "semantic-release"
   },
   "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/validator": "13.11.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "zod": "^3.0.0"
   },
   "dependencies": {
