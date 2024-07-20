@@ -4,12 +4,16 @@
   "description": "Turn your Zod schemas into configurable field arrays for easy integration with HTML, React, Vue, and more.",
   "main": "lib/index.mjs",
   "module": "lib/index.mjs",
+
   "author": "Wojciech Król <wojciechkrol97@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wojtekKrol/zodify-forms/tree/dev/packages/zod-to-fields",
-    "bugs": "https://github.com/wojtekKrol/zodify-forms/issues"
+    "url": "git@github.com:wojtekKrol/zodify-forms",
+    "bugs": "https://github.com/paxcode-it/zodify-forms/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "imports": {
     "@/*": "./src/*"

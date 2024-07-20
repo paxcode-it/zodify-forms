@@ -1,7 +1,7 @@
 {
-  "name": "zodify-forms-monorepo",
+  "name": "@paxcode-it/zodify-forms",
   "private": true,
-  "description": "zodify-forms monorepo",
+  "description": "zodify-forms monorepo with Turbo",
   "author": "Wojciech Król <wojciechkrol97@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -10,8 +10,8 @@
     "bugs": "https://github.com/paxcode-it/zodify-forms/issues"
   },
   "scripts": {
-    "prebuild": "source ~/.nvm/nvm.sh && nvm use && npx only-allow pnpm",
-    "preinstall": "source ~/.nvm/nvm.sh && nvm use && npx only-allow pnpm",
+    "prebuild": "npx only-allow pnpm",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
     "build:apps": "turbo run build",
     "test:lib": "turbo run test --no-cache --force",
@@ -26,6 +26,9 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@semantic-release/github": "^10.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.1",
     "@types/jest": "29.5.5",
     "@typescript-eslint/eslint-plugin": "6.4.1",
     "@typescript-eslint/parser": "6.4.1",
