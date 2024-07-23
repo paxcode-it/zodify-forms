@@ -29,6 +29,11 @@ export type InputNumberFieldOptions = ExtendedFieldInputAttributes & {
   type: 'number'
 }
 
+// export type InputArrayFieldOptions = ExtendedFieldInputAttributes & {
+//   tag: 'input' | 'select'
+//   type: 'text' | 'number'
+// }
+
 type InputEnumFieldSelectOptions = {
   tag: 'select'
 } & ExtendedFieldSelectAttributes

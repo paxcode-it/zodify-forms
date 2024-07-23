@@ -1,19 +1,20 @@
 {
   "name": "zod-to-fields",
-  "version": "0.1.38",
+  "version": "0.0.0-development",
   "description": "Turn your Zod schemas into configurable field arrays for easy integration with HTML, React, Vue, and more.",
   "main": "lib/index.mjs",
   "module": "lib/index.mjs",
-
   "author": "Wojciech Król <wojciechkrol97@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:wojtekKrol/zodify-forms",
-    "bugs": "https://github.com/paxcode-it/zodify-forms/issues"
+    "url": "git@github.com:paxcode-it/zodify-forms",
+    "bugs": "https://github.com/paxcode-it/zodify-forms/issues",
+    "directory": "packages/zod-to-fields"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
   },
   "imports": {
     "@/*": "./src/*"
@@ -56,11 +57,11 @@
     "lint:code": "eslint --cache --cache-location node_modules/.cache/eslint --cache-strategy content --ext ts .",
     "lint:text": "prettier --check \"**/*.{json,md,mdx,yml}\"",
     "test": "jest",
-    "deploy": "semantic-release"
+    "deploy": "semantic-release -e semantic-release-monorepo"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
-    "@types/validator": "13.11.5",
+    "@types/validator": "13.12.0",
     "react": "^18.2.0",
     "zod": "^3.0.0"
   },

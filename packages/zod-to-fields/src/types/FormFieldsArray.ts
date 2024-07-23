@@ -1,4 +1,4 @@
-import type {
+import {
   InputBooleanFieldOptions,
   InputEnumFieldOptions,
   InputNumberFieldOptions,

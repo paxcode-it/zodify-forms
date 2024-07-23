@@ -1,4 +1,4 @@
-import { EnumLike } from 'zod'
+import { EnumLike, ZodArray } from 'zod'
 import * as z from 'zod'
 
 // Type Guard for ZodString
@@ -30,4 +30,18 @@ function isZodNativeEnum<T extends EnumLike>(
   return value instanceof z.ZodNativeEnum
 }
 
-export { isZodString, isZodNumber, isZodBoolean, isZodEnum, isZodNativeEnum }
+// Type Guard for ZodArray
+function isZodArray<T extends ZodArray<z.ZodTypeAny>>(
+  value: z.ZodTypeAny
+): value is z.ZodArray<T> {
+  return value instanceof z.ZodArray
+}
+
+export {
+  isZodString,
+  isZodNumber,
+  isZodBoolean,
+  isZodEnum,
+  isZodNativeEnum,
+  isZodArray,
+}

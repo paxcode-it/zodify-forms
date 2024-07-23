@@ -66,6 +66,12 @@ function handleFieldValue<
       fieldValue as z.ZodNativeEnum<P>
     )
   }
+  // else if (isZodArray(baseType)) {
+  //   return handleZodArray(
+  //     options as InputArrayFieldOptions,
+  //     fieldValue as z.ZodArray<T>
+  //   )
+  // }
 
   throw new Error(`Unsupported Zod type`)
 }

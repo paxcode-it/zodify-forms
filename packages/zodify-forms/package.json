@@ -1,7 +1,7 @@
 {
   "name": "@paxcode-it/zodify-forms",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "Turn your Zod schemas into configurable field arrays for easy integration with HTML, React, Vue, and more.",
   "main": "lib/index.mjs",
   "module": "lib/index.mjs",
@@ -9,11 +9,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:wojtekKrol/zodify-forms",
-    "bugs": "https://github.com/paxcode-it/zodify-forms/issues"
+    "url": "git@github.com:paxcode-it/zodify-forms",
+    "bugs": "https://github.com/paxcode-it/zodify-forms/issues",
+    "directory": "packages/zodify-forms"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
   },
   "exports": {
     ".": {
@@ -53,7 +55,7 @@
     "lint:code": "eslint --cache --cache-location node_modules/.cache/eslint --cache-strategy content --ext ts .",
     "lint:text": "prettier --check \"**/*.{json,md,mdx,yml}\"",
     "test": "jest",
-    "deploy": "semantic-release"
+    "deploy": "semantic-release -e semantic-release-monorepo"
   },
   "devDependencies": {
     "react": "^18.2.0",
