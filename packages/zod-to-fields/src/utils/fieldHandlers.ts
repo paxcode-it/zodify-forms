@@ -79,10 +79,21 @@ const handleNativeZodEnum = <T extends EnumLike>(
   }
 }
 
+// const handleZodArray = <T extends z.ZodTypeAny>(
+//   fieldOptions: InputArrayFieldOptions,
+//   fieldValue: z.ZodArray<T>
+// ): InputArrayFieldOptions => {
+//   return {
+//     ...fieldOptions,
+//     type: fieldOptions.type ?? 'text',
+//   }
+// }
+
 export {
   handleZodBoolean,
   handleZodNumber,
   handleZodString,
   handleZodEnum,
   handleNativeZodEnum,
+  // handleZodArray,
 }

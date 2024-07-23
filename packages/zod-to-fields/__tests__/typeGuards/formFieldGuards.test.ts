@@ -159,7 +159,6 @@ describe('isInputStringFieldOptions', () => {
       id: 'someId',
       label: 'someLabel',
     }
-
     const result = isInputStringFieldOptions(field)
 
     expect(result).toBe(false)

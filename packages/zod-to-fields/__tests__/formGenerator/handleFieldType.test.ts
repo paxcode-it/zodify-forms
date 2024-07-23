@@ -1,4 +1,4 @@
-import validator from 'validator'
+import { isMobilePhone } from 'validator'
 import * as z from 'zod'
 
 import {
@@ -184,7 +184,7 @@ describe('handleFieldValue function with methods', () => {
   it('should handle ZodString with custom validation => refine()', () => {
     // Arrange
     const fieldKey = 'name'
-    const fieldValue = z.string().refine(validator.isMobilePhone, {
+    const fieldValue = z.string().refine(isMobilePhone, {
       message: 'Must be a valid phone number',
     })
 

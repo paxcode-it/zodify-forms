@@ -9,6 +9,6 @@ module.exports = {
   ],
 
   // Prettify only Markdown and JSON files
-  '**/*.{json,md,mdx,yml}': filenames =>
+  '**/*.{json,md,mdx,yml,cjs}': filenames =>
     `pnpm prettier --write ${filenames.join(' ')}`,
 }
